@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nosotros - Servicios SEGGAP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce más sobre Servicios SEGGAP, expertos en climatización con más de 15 años de experiencia en el mercado.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --secondary-color: #003366;
+      --accent-color: #ffc107;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .top-bar {
+      background-color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+    
+    .main-header {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-brand img {
+      height: 80px;
+      transition: height 0.3s;
+    }
+    
+    .nav-link {
+      position: relative;
+      padding: 0.5rem 1rem;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: all 0.3s;
+    }
+    
+    .nav-link:hover::after {
+      width: 70%;
+      left: 15%;
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/background.jpeg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 120px 0;
+    }
+    
+    .service-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 50px;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 15px auto;
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--primary-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -12px;
+      background-color: white;
+      border: 4px solid var(--primary-color);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .left {
+      left: 0;
+    }
+    
+    .right {
+      left: 50%;
+    }
+    
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid var(--primary-color);
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+    
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid var(--primary-color);
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+    
+    .right::after {
+      left: -12px;
+    }
+    
+    .timeline-content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .team-card {
+      transition: all 0.3s ease;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    
+    .team-card img {
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+    
+    .social-icon:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-brand img {
+        height: 60px;
+      }
+      
+      .hero-section {
+        padding: 80px 0;
+      }
+      
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+      
+      .left::after, .right::after {
+        left: 18px;
+      }
+      
+      .right {
+        left: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra superior informativa -->
+  <div class="top-bar bg-dark text-white py-2 d-none d-md-block">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-award-fill me-2 text-warning"></i>
+            <span class="small">CERTIFICACIÓN DUN & BRADSTREET: <span class="fw-light">OTORGADA POR ...</span></span>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="d-flex align-items-center justify-content-md-end gap-3">
+            <div class="small">
+              <i class="bi bi-clock me-1"></i> 
+              Horario: L-V 9:00AM - 6:00PM
+            </div>
+            <div class="social-links">
+              <a href="https://facebook.com" class="text-white me-2" aria-label="Facebook" target="_blank" rel="noopener">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://linkedin.com" class="text-white" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabecera principal -->
+  <header class="main-header bg-white sticky-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo1.png" alt="Servicios Del Golfo GA" class="img-fluid">
+          <span class="ms-2 d-none d-lg-inline-block">Servicios SEGGAP</span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                Servicios
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="servicios.html">Aire Acondicionado</a></li>
+                <li><a class="dropdown-item" href="servicios.html">Refrigeración Comercial</a></li>
+                <li><a class="dropdown-item" href="servicios.html">Construcción con Climatización</a></li>
+                <li><a class="dropdown-item" href="servicios.html">Mantenimiento Preventivo</a></li>
+              </ul>
+            </li>
+            <!--
+            <li class="nav-item">
+              <a class="nav-link" href="galeria.html">Galeria</a>
+            </li>
+          -->
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+          
+          <a href="contacto.html" class="btn btn-primary ms-lg-3 px-4 fw-bold">
+            <i class="bi bi-envelope me-2"></i>Cotizar
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold mb-4">Nuestra Historia</h1>
+          <p class="lead mb-5">Más de 15 años brindando soluciones integrales en climatización con profesionalismo y calidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="img/mantenimientopreventivo.jpg" alt="Equipo de trabajo" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="section-title">Quiénes Somos</h2>
+          <p>Servicios SEGGAP es una empresa mexicana especializada en sistemas de climatización y refrigeración, fundada en 2008 con el objetivo de ofrecer soluciones técnicas de alta calidad para los sectores público y privado.</p>
+          <p>Nuestro equipo de ingenieros y técnicos certificados combina experiencia con innovación para diseñar, instalar y mantener sistemas de climatización que optimizan el confort y la eficiencia energética.</p>
+          
+          <div class="row mt-4">
+            <div class="col-md-6 mb-3">
+              <div class="d-flex">
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                <div>
+                  <h5 class="mb-1">Misión</h5>
+                  <p class="mb-0">Proporcionar soluciones integrales en climatización con los más altos estándares de calidad.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="d-flex">
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                <div>
+                  <h5 class="mb-1">Visión</h5>
+                  <p class="mb-0">Ser líderes en innovación tecnológica en sistemas de climatización en México.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestra Historia -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-title">Nuestra Historia</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>2008</h3>
+            <p>Fundación de Servicios SEGGAP como una pequeña empresa especializada en mantenimiento de sistemas de aire acondicionado residencial.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>2012</h3>
+            <p>Expansión a proyectos comerciales y obtención de la primera certificación de calidad en nuestros servicios.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>2015</h3>
+            <p>Inicio de operaciones en el sector industrial y formación de alianzas estratégicas con fabricantes líderes.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>2018</h3>
+            <p>Premio a la Excelencia en Servicios de Climatización otorgado por la Asociación Mexicana de Refrigeración.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>2022</h3>
+            <p>Ampliación de nuestras instalaciones y certificación ISO 9001:2015 en nuestros procesos de calidad.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>2025</h3>
+            <p>Consolidación como empresa líder en climatización con más de 200 proyectos completados y 50 empleados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!---->
+  <!-- Nuestro Equipo -->
+<!--
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center section-title">Nuestro Equipo</h2>
+      <p class="text-center mb-5">Contamos con un equipo multidisciplinario de profesionales altamente capacitados y comprometidos con la excelencia.</p>
+      
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card team-card h-100">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top" alt="Ing. Juan Martínez">
+            <div class="card-body text-center">
+              <h5 class="card-title">Ing. Juan Martínez</h5>
+              <p class="card-text text-primary">Director General</p>
+              <p class="card-text small">Más de 20 años de experiencia en diseño de sistemas HVAC.</p>
+              <div class="social-icons">
+                <a href="#" class="social-icon me-1"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="card team-card h-100">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top" alt="Ing. Laura González">
+            <div class="card-body text-center">
+              <h5 class="card-title">Ing. Laura González</h5>
+              <p class="card-text text-primary">Gerente de Proyectos</p>
+              <p class="card-text small">Especialista en eficiencia energética y sistemas comerciales.</p>
+              <div class="social-icons">
+                <a href="#" class="social-icon me-1"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="card team-card h-100">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="card-img-top" alt="Ing. Carlos Rodríguez">
+            <div class="card-body text-center">
+              <h5 class="card-title">Ing. Carlos Rodríguez</h5>
+              <p class="card-text text-primary">Supervisor Técnico</p>
+              <p class="card-text small">Experto en instalación y mantenimiento de sistemas industriales.</p>
+              <div class="social-icons">
+                <a href="#" class="social-icon me-1"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="card team-card h-100">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="card-img-top" alt="Lic. Ana Sánchez">
+            <div class="card-body text-center">
+              <h5 class="card-title">Lic. Ana Sánchez</h5>
+              <p class="card-text text-primary">Gerente Comercial</p>
+              <p class="card-text small">Responsable de relaciones con clientes y desarrollo de negocio.</p>
+              <div class="social-icons">
+                <a href="#" class="social-icon me-1"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
+  <!-- Certificaciones -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-title">Certificaciones y Alianzas</h2>
+      <p class="text-center mb-5">Nuestros estándares de calidad están respaldados por las siguientes certificaciones y alianzas estratégicas:</p>
+      
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-6 col-md-3 text-center">
+          <img src="img/logo3.png" alt="ISO 9001" class="img-fluid" style="max-height: 80px;">
+          <p class="mt-2 fw-bold">ISO 9001:2015</p>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <img src="img/logo3.png" alt="Norma Oficial Mexicana" class="img-fluid" style="max-height: 80px;">
+          <p class="mt-2 fw-bold">Norma Oficial Mexicana</p>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <img src="img/logo3.png" alt="Carrier" class="img-fluid" style="max-height: 80px;">
+          <p class="mt-2 fw-bold">Partner Autorizado</p>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <img src="img/logo3.png" alt="Trane" class="img-fluid" style="max-height: 80px;">
+          <p class="mt-2 fw-bold">Partner Autorizado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mb-4">¿Listo para trabajar con nosotros?</h2>
+          <p class="lead mb-5">Contáctanos hoy mismo y descubre cómo podemos ayudarte con tus necesidades de climatización.</p>
+          <a href="contacto.html" class="btn btn-light btn-lg px-5">Contáctanos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5" style="background-color: #004aad; color: white;">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <img src="img/logo1.png" alt="Servicios SEGGAP" class="img-fluid mb-3" width="180">
+          <p>Expertos en instalación, mantenimiento y reparación de sistemas de aire acondicionado y refrigeración para los sectores público y privado.</p>
+          
+          <div class="social-icons mt-4">
+            <a href="#" class="social-icon me-2 text-white"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon me-2 text-white"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-icon me-2 text-white"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon text-white"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4">
+          <h5 class="mb-4 text-white">Enlaces Rápidos</h5>
+          <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="index.html" class="text-white">Inicio</a></li>
+            <li class="mb-2"><a href="nosotros.html" class="text-white">Nosotros</a></li>
+            <li class="mb-2"><a href="servicios.html" class="text-white">Servicios</a></li>
+            <li class="mb-2"><a href="proyectos.html" class="text-white">Proyectos</a></li>
+            <li class="mb-2"><a href="contacto.html" class="text-white">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-4 text-white">Servicios</h5>
+          <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="servicio1.html" class="text-white">Aire Acondicionado</a></li>
+            <li class="mb-2"><a href="servicio2.html" class="text-white">Refrigeración Comercial</a></li>
+            <li class="mb-2"><a href="servicio3.html" class="text-white">Construcción con Climatización</a></li>
+            <li class="mb-2"><a href="servicio4.html" class="text-white">Mantenimiento Preventivo</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-4 text-white">Contacto</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-geo-alt-fill me-2"></i>
+              <a href="https://maps.app.goo.gl/6d3SGRjr7a9z1rnHA" target="_blank" class="text-white">
+                Álvaro Obregón 102, Revolucion, 93390 Poza Rica de Hidalgo, Ver.
+              </a>
+            </li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +52 782-82-4-06-85</li>
+            <li class="mb-2">
+              <i class="bi bi-envelope-fill me-2"></i>
+              <a href="mailto:seggap@gmail.com" class="text-white">
+                seggap@gmail.com
+              </a>
+            </li>
+            <li class="mb-2"><i class="bi bi-clock-fill me-2"></i> L-V: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="my-4 bg-light opacity-25">
+      
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2025 Servicios SEGGAP. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" class="text-white me-3">Política de Privacidad</a>
+          <a href="#" class="text-white">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Efecto de reducción del navbar al hacer scroll
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.main-header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+        document.querySelector('.navbar-brand img').style.height = '60px';
+      } else {
+        header.classList.remove('scrolled');
+        document.querySelector('.navbar-brand img').style.height = '80px';
+      }
+    });
+  </script>
+</body>
+</html>

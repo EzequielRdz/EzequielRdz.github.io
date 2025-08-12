@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios - Servicios SEGGAP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nuestros servicios especializados en climatización y refrigeración para todo tipo de proyectos.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --secondary-color: #003366;
+      --accent-color: #ffc107;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .top-bar {
+      background-color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+    
+    .main-header {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-brand img {
+      height: 80px;
+      transition: height 0.3s;
+    }
+    
+    .nav-link {
+      position: relative;
+      padding: 0.5rem 1rem;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: all 0.3s;
+    }
+    
+    .nav-link:hover::after {
+      width: 70%;
+      left: 15%;
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/background.jpeg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 120px 0;
+    }
+    
+    .service-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .service-card img {
+      height: 250px;
+      object-fit: cover;
+      width: 100%;
+    }
+    
+    .service-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 50px;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 15px auto;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .gallery-item img {
+      transition: transform 0.5s ease;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 86, 179, 0.9);
+      color: white;
+      padding: 15px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    .tab-content {
+      padding: 30px 0;
+    }
+    
+    .nav-pills .nav-link.active {
+      background-color: var(--primary-color);
+    }
+    
+    .nav-pills .nav-link {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-brand img {
+        height: 60px;
+      }
+      
+      .hero-section {
+        padding: 80px 0;
+      }
+      
+      .service-card img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra superior informativa -->
+  <div class="top-bar bg-dark text-white py-2 d-none d-md-block">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-award-fill me-2 text-warning"></i>
+            <span class="small">CERTIFICACIÓN DUN & BRADSTREET: <span class="fw-light">OTORGADA POR ...</span></span>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="d-flex align-items-center justify-content-md-end gap-3">
+            <div class="small">
+              <i class="bi bi-clock me-1"></i> 
+              Horario: L-V 9:00AM - 6:00PM
+            </div>
+            <div class="social-links">
+              <a href="https://facebook.com" class="text-white me-2" aria-label="Facebook" target="_blank" rel="noopener">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://linkedin.com" class="text-white" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabecera principal -->
+  <header class="main-header bg-white sticky-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo1.png" alt="Servicios Del Golfo GA" class="img-fluid">
+          <span class="ms-2 d-none d-lg-inline-block">Servicios SEGGAP</span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                Servicios
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="servicios.html">Aire Acondicionado</a></li>
+                <li><a class="dropdown-item" href="servicios.html">Refrigeración Comercial</a></li>
+                <li><a class="dropdown-item" href="servicios.html">Construcción con Climatización</a></li>
+                <li><a class="dropdown-item" href="servicios.html">Mantenimiento Preventivo</a></li>
+              </ul>
+            </li>
+            <!--
+            <li class="nav-item">
+              <a class="nav-link" href="galeria.html">Galeria</a>
+            </li>
+            -->
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+          
+          <a href="contacto.html" class="btn btn-primary ms-lg-3 px-4 fw-bold">
+            <i class="bi bi-envelope me-2"></i>Cotizar
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold mb-4">Nuestros Servicios</h1>
+          <p class="lead mb-5">Soluciones integrales en climatización y refrigeración para todo tipo de proyectos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios principales -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center section-title">Servicios Especializados</h2>
+      
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100">
+            <div class="position-relative">
+              <img src="img/aireacondicionado.jpg" class="card-img-top" alt="Instalación de Aire Acondicionado">
+              <span class="service-badge">Residencial</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h4">Instalación de Aire Acondicionado</h3>
+              <p class="card-text">Instalación profesional de sistemas split, minisplit, centrales y de ventana para hogares y oficinas.</p>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Cálculo de carga térmica</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Selección del equipo adecuado</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Instalación con estándares de calidad</li>
+              </ul>
+              <a href="contacto.html" class="btn btn-outline-primary mt-2">Solicitar servicio</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100">
+            <div class="position-relative">
+              <img src="img/refrigeracioncomercial.jpg" class="card-img-top" alt="Refrigeración Comercial">
+              <span class="service-badge">Comercial</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h4">Refrigeración Comercial</h3>
+              <p class="card-text">Sistemas de refrigeración para supermercados, restaurantes, hoteles y comercios en general.</p>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Cámaras frigoríficas</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Vitrinas refrigeradas</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Sistemas walk-in cooler</li>
+              </ul>
+              <a href="contacto.html" class="btn btn-outline-primary mt-2">Solicitar servicio</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100">
+            <div class="position-relative">
+              <img src="img/cclimatizacion.jpeg" class="card-img-top" alt="Climatización Industrial">
+              <span class="service-badge">Industrial</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h4">Climatización Industrial</h3>
+              <p class="card-text">Soluciones para fábricas, bodegas y plantas industriales con sistemas de alta capacidad.</p>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Sistemas VRV/VRF</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Chillers y torres de enfriamiento</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Control de humedad</li>
+              </ul>
+              <a href="contacto.html" class="btn btn-outline-primary mt-2">Solicitar servicio</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100">
+            <div class="position-relative">
+              <img src="img/mantenimientopreventivo.jpg" class="card-img-top" alt="Mantenimiento Preventivo">
+              <span class="service-badge">Mantenimiento</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h4">Mantenimiento Preventivo</h3>
+              <p class="card-text">Programas de mantenimiento para maximizar eficiencia y vida útil de sus equipos.</p>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Limpieza de componentes</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Revisión de refrigerante</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Chequeo eléctrico</li>
+              </ul>
+              <a href="contacto.html" class="btn btn-outline-primary mt-2">Solicitar servicio</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100">
+            <div class="position-relative">
+              <img src="img/background.jpeg" class="card-img-top" alt="Reparación de Equipos">
+              <span class="service-badge">Reparación</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h4">Reparación de Equipos</h3>
+              <p class="card-text">Servicio técnico especializado para diagnóstico y reparación de fallas en equipos.</p>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Diagnóstico preciso</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Repuestos originales</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Garantía en reparaciones</li>
+              </ul>
+              <a href="contacto.html" class="btn btn-outline-primary mt-2">Solicitar servicio</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100">
+            <div class="position-relative">
+              <img src="img/logo1.png" class="card-img-top" alt="Proyectos Especiales">
+              <span class="service-badge">Proyectos</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h4">Proyectos Especiales</h3>
+              <p class="card-text">Diseño e implementación de sistemas personalizados para necesidades específicas.</p>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Estudios térmicos</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Diseño HVAC</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Ejecución llave en mano</li>
+              </ul>
+              <a href="contacto.html" class="btn btn-outline-primary mt-2">Solicitar servicio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería de trabajos -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-title">Nuestros Trabajos</h2>
+      <p class="text-center mb-5">Algunos de nuestros proyectos recientes en diferentes sectores</p>
+      
+      <ul class="nav nav-pills justify-content-center mb-4" id="gallery-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab">Todos</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="residencial-tab" data-bs-toggle="pill" data-bs-target="#residencial" type="button" role="tab">Residencial</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="comercial-tab" data-bs-toggle="pill" data-bs-target="#comercial" type="button" role="tab">Comercial</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="industrial-tab" data-bs-toggle="pill" data-bs-target="#industrial" type="button" role="tab">Industrial</button>
+        </li>
+      </ul>
+      
+      <div class="tab-content" id="gallery-tabs-content">
+        <div class="tab-pane fade show active" id="all" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-residencial-1.jpg" alt="Proyecto Residencial">
+                <div class="gallery-caption">
+                  <h5>Casa Habitación Lomas</h5>
+                  <p>Instalación de sistema centralizado para residencia de 450m²</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-comercial-1.jpg" alt="Proyecto Comercial">
+                <div class="gallery-caption">
+                  <h5>Restaurante La Parrilla</h5>
+                  <p>Sistema de refrigeración para cocina y áreas comunes</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-industrial-1.jpg" alt="Proyecto Industrial">
+                <div class="gallery-caption">
+                  <h5>Planta Manufacturera</h5>
+                  <p>Control climático para área de producción de 2,000m²</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-residencial-2.jpg" alt="Proyecto Residencial">
+                <div class="gallery-caption">
+                  <h5>Condominio Las Palmas</h5>
+                  <p>Instalación de minisplits en 12 departamentos</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-comercial-2.jpg" alt="Proyecto Comercial">
+                <div class="gallery-caption">
+                  <h5>Tienda Departamental</h5>
+                  <p>Sistema VRV para áreas de ventas y almacenes</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-industrial-2.jpg" alt="Proyecto Industrial">
+                <div class="gallery-caption">
+                  <h5>Bodega Refrigerada</h5>
+                  <p>Diseño e instalación de cámara frigorífica a -18°C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="residencial" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-residencial-1.jpg" alt="Proyecto Residencial">
+                <div class="gallery-caption">
+                  <h5>Casa Habitación Lomas</h5>
+                  <p>Instalación de sistema centralizado para residencia de 450m²</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-residencial-2.jpg" alt="Proyecto Residencial">
+                <div class="gallery-caption">
+                  <h5>Condominio Las Palmas</h5>
+                  <p>Instalación de minisplits en 12 departamentos</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-residencial-3.jpg" alt="Proyecto Residencial">
+                <div class="gallery-caption">
+                  <h5>Residencia Campestre</h5>
+                  <p>Sistema de climatización integral con control por zonas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="comercial" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-comercial-1.jpg" alt="Proyecto Comercial">
+                <div class="gallery-caption">
+                  <h5>Restaurante La Parrilla</h5>
+                  <p>Sistema de refrigeración para cocina y áreas comunes</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-comercial-2.jpg" alt="Proyecto Comercial">
+                <div class="gallery-caption">
+                  <h5>Tienda Departamental</h5>
+                  <p>Sistema VRV para áreas de ventas y almacenes</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-comercial-3.jpg" alt="Proyecto Comercial">
+                <div class="gallery-caption">
+                  <h5>Hotel Boutique</h5>
+                  <p>Climatización de 25 habitaciones con control individual</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="industrial" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-industrial-1.jpg" alt="Proyecto Industrial">
+                <div class="gallery-caption">
+                  <h5>Planta Manufacturera</h5>
+                  <p>Control climático para área de producción de 2,000m²</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-industrial-2.jpg" alt="Proyecto Industrial">
+                <div class="gallery-caption">
+                  <h5>Bodega Refrigerada</h5>
+                  <p>Diseño e instalación de cámara frigorífica a -18°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gallery-item">
+                <img src="img/proyecto-industrial-3.jpg" alt="Proyecto Industrial">
+                <div class="gallery-caption">
+                  <h5>Laboratorio Farmacéutico</h5>
+                  <p>Sistema de climatización con control de humedad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5" style="background-color: #004aad; color: white;">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <img src="img/logo1.png" alt="Servicios SEGGAP" class="img-fluid mb-3" width="180">
+          <p>Expertos en instalación, mantenimiento y reparación de sistemas de aire acondicionado y refrigeración para los sectores público y privado.</p>
+          
+          <div class="social-icons mt-4">
+            <a href="#" class="social-icon me-2 text-white"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon me-2 text-white"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-icon me-2 text-white"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon text-white"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4">
+          <h5 class="mb-4 text-white">Enlaces Rápidos</h5>
+          <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="index.html" class="text-white">Inicio</a></li>
+            <li class="mb-2"><a href="nosotros.html" class="text-white">Nosotros</a></li>
+            <li class="mb-2"><a href="servicios.html" class="text-white">Servicios</a></li>
+            <li class="mb-2"><a href="proyectos.html" class="text-white">Proyectos</a></li>
+            <li class="mb-2"><a href="contacto.html" class="text-white">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-4 text-white">Servicios</h5>
+          <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="servicio1.html" class="text-white">Aire Acondicionado</a></li>
+            <li class="mb-2"><a href="servicio2.html" class="text-white">Refrigeración Comercial</a></li>
+            <li class="mb-2"><a href="servicio3.html" class="text-white">Construcción con Climatización</a></li>
+            <li class="mb-2"><a href="servicio4.html" class="text-white">Mantenimiento Preventivo</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-4 text-white">Contacto</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-geo-alt-fill me-2"></i>
+              <a href="https://maps.app.goo.gl/6d3SGRjr7a9z1rnHA" target="_blank" class="text-white">
+                Álvaro Obregón 102, Revolucion, 93390 Poza Rica de Hidalgo, Ver.
+              </a>
+            </li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +52 782-82-4-06-85</li>
+            <li class="mb-2">
+              <i class="bi bi-envelope-fill me-2"></i>
+              <a href="mailto:seggap@gmail.com" class="text-white">
+                seggap@gmail.com
+              </a>
+            </li>
+            <li class="mb-2"><i class="bi bi-clock-fill me-2"></i> L-V: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="my-4 bg-light opacity-25">
+      
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2025 Servicios SEGGAP. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" class="text-white me-3">Política de Privacidad</a>
+          <a href="#" class="text-white">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Efecto de reducción del navbar al hacer scroll
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.main-header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+        document.querySelector('.navbar-brand img').style.height = '60px';
+      } else {
+        header.classList.remove('scrolled');
+        document.querySelector('.navbar-brand img').style.height = '80px';
+      }
+    });
+  </script>
+</body>
+</html>
